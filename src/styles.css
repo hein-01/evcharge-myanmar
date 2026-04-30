@@ -36,12 +36,15 @@
   --color-ring: var(--ring);
   --color-electric: var(--electric);
   --color-electric-foreground: var(--electric-foreground);
+  --color-eco: var(--eco);
+  --color-eco-foreground: var(--eco-foreground);
   --color-ruby: var(--ruby);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
 
   --gradient-hero: var(--gradient-hero);
   --gradient-electric: var(--gradient-electric);
+  --gradient-eco: var(--gradient-eco);
   --gradient-radial: var(--gradient-radial);
   --shadow-glow: var(--shadow-glow);
   --shadow-card: var(--shadow-card);
