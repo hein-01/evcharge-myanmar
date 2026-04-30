@@ -122,8 +122,8 @@
   }
   .bg-grid {
     background-image:
-      linear-gradient(oklch(0.86 0.20 170 / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.86 0.20 170 / 0.06) 1px, transparent 1px);
+      linear-gradient(oklch(0.55 0.18 295 / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.55 0.18 295 / 0.07) 1px, transparent 1px);
     background-size: 48px 48px;
   }
   .glow-pulse {
