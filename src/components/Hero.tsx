@@ -191,7 +191,7 @@ export function Hero() {
             { to: "/marketplace/buy", label: "Buy EVs", count: "Browse listings", emoji: "🛒", grad: "from-electric/15 to-electric/5" },
             { to: "/marketplace/sell", label: "Sell EVs", count: "List your car", emoji: "💸", grad: "from-eco/15 to-eco/5" },
             { to: "/marketplace/rent", label: "Rent EVs", count: "Daily & weekly", emoji: "🔑", grad: "from-accent/15 to-accent/5" },
-            { to: "/services", label: "Insurance", count: "Compare plans", emoji: "🛡️", grad: "from-ruby/10 to-ruby/0" },
+            { to: "/services", label: "Insurance & Loan", count: "Compare plans", emoji: "🛡️", grad: "from-ruby/10 to-ruby/0" },
           ].map((p, i) => (
             <Link
               key={`${p.to}-${i}`}
