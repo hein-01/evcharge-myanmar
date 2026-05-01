@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Car, ShoppingBag, Bell, ArrowRight } from "lucide-react";
+import { Car, ArrowRight } from "lucide-react";
 
 type MarketplaceSearch = { category?: "cars" | "accessories" };
 
