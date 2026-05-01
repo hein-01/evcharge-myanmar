@@ -28,17 +28,9 @@ const previewCars = [
   { name: "Tesla Model 3", price: "215,000,000", year: 2023, range: "510 km", hue: 25 },
 ];
 
-const previewParts = [
-  { name: "Type 2 home wallbox 7kW", price: "1,250,000", seller: "EVHome MM", hue: 195 },
-  { name: "CCS2 portable charger 22kW", price: "3,800,000", seller: "PowerHub", hue: 295 },
-  { name: "Premium EV tire set (4)", price: "920,000", seller: "MyanTire", hue: 130 },
-  { name: "Dashcam + EV monitor", price: "320,000", seller: "AutoTech YGN", hue: 25 },
-];
-
 function MarketplacePage() {
   const { category } = Route.useSearch();
   const showCars = category !== "accessories";
-  const showAccessories = category !== "cars";
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
