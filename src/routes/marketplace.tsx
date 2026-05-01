@@ -46,44 +46,6 @@ function MarketplacePage() {
         <div className="mx-auto max-w-7xl px-6">
           <Link to="/" className="text-xs text-muted-foreground hover:text-foreground">← Home</Link>
 
-          {/* Hero banner */}
-          <div className="mt-2 overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-electric/10 via-card to-eco/10 p-10 md:p-14" style={{ boxShadow: "var(--shadow-card)" }}>
-            <div className="grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-center">
-              <div>
-                <span className="inline-flex items-center gap-2 rounded-full bg-eco/15 px-3 py-1 text-xs font-medium text-eco">
-                  <span className="h-1.5 w-1.5 rounded-full bg-eco" /> Beta launching Q3 2026
-                </span>
-                <h1 className="mt-4 font-display text-4xl font-bold md:text-5xl">
-                  Myanmar's EV<br />marketplace.
-                </h1>
-                <p className="mt-4 max-w-md text-muted-foreground">
-                  A trusted place to buy and sell electric cars, chargers and accessories. Verified sellers, transparent pricing in MMK, no hidden fees.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <button className="inline-flex h-11 items-center gap-2 rounded-full bg-foreground px-5 text-sm font-semibold text-background transition hover:opacity-90">
-                    <Bell className="h-4 w-4" /> Notify me at launch
-                  </button>
-                  <button className="inline-flex h-11 items-center gap-2 rounded-full border border-border bg-card px-5 text-sm font-semibold transition hover:border-electric/40">
-                    Become a seller <ArrowRight className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { v: "200+", l: "EV listings" },
-                  { v: "12", l: "Verified sellers" },
-                  { v: "MMK", l: "Local pricing" },
-                  { v: "0%", l: "Buyer fees" },
-                ].map((s) => (
-                  <div key={s.l} className="rounded-2xl border border-border bg-background p-4">
-                    <div className="font-display text-2xl font-bold text-gradient-electric">{s.v}</div>
-                    <div className="mt-1 text-xs text-muted-foreground">{s.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
           {/* Cars preview */}
           {showCars && (
           <PreviewSection icon={Car} title="Electric cars" subtitle="A taste of what's coming">
