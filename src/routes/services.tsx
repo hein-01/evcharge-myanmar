@@ -6,9 +6,9 @@ import { Wrench, Shield, Star, MapPin, ArrowRight, Phone, Navigation } from "luc
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "EV Workshops & Insurance — EVCharge Myanmar" },
+      { title: "EV Workshops & Insurance & Loan — EVCharge Myanmar" },
       { name: "description", content: "Find certified EV repair workshops, insurance providers and financing options across Myanmar." },
-      { property: "og:title", content: "EV Workshops & Insurance — EVCharge Myanmar" },
+      { property: "og:title", content: "EV Workshops & Insurance & Loan — EVCharge Myanmar" },
       { property: "og:description", content: "Verified EV workshops and insurance partners across Myanmar." },
     ],
   }),
@@ -107,8 +107,8 @@ function ServicesPage() {
                 <Shield className="h-5 w-5 text-eco" />
               </div>
               <div>
-                <h2 className="font-display text-2xl font-bold">EV insurance</h2>
-                <p className="text-sm text-muted-foreground">Compare plans from Myanmar's leading insurers</p>
+                <h2 className="font-display text-2xl font-bold">EV insurance & loan</h2>
+                <p className="text-sm text-muted-foreground">Compare plans and financing from Myanmar's leading providers</p>
               </div>
             </div>
 
@@ -134,7 +134,7 @@ function ServicesPage() {
 
           <div className="my-20 grid gap-4 md:grid-cols-2">
             <CTACard title="Run a workshop?" desc="Reach Myanmar's growing EV community. Get listed free during beta." cta="List your workshop" />
-            <CTACard title="Insurance partner?" desc="Showcase your EV plans next to the country's top providers." cta="Become a partner" />
+            <CTACard title="Insurance or loan partner?" desc="Showcase your EV plans and financing next to the country's top providers." cta="Become a partner" />
           </div>
         </div>
       </main>

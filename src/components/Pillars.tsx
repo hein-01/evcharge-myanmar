@@ -37,7 +37,7 @@ const pillars = [
     to: "/services",
     search: undefined,
     icon: Shield,
-    title: "Insurance & finance",
+    title: "Insurance & Loan",
     desc: "Compare EV-specific insurance plans and financing options from Myanmar's top providers.",
     badge: "Live",
     stat: "6 partners",
