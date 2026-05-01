@@ -185,7 +185,7 @@ export function Hero() {
         >
           {[
             { to: "/stations", label: "Charging stations", count: "127 live", emoji: "⚡", grad: "from-electric/15 to-electric/5" },
-            { to: "/marketplace", label: "Cars & accessories", count: "Coming soon", emoji: "🚗", grad: "from-eco/15 to-eco/5" },
+            { to: "/marketplace", label: "Cars Accessories", count: "Coming soon", emoji: "🚗", grad: "from-eco/15 to-eco/5" },
             { to: "/services", label: "Workshops & repair", count: "48 verified", emoji: "🔧", grad: "from-accent/15 to-accent/5" },
             { to: "/news", label: "EV news & guides", count: "New daily", emoji: "📰", grad: "from-ruby/10 to-ruby/0" },
             { to: "/marketplace/buy", label: "Buy EVs", count: "Browse listings", emoji: "🛒", grad: "from-electric/15 to-electric/5" },
@@ -201,7 +201,7 @@ export function Hero() {
               <div className="text-2xl">{p.emoji}</div>
               <div className="mt-3 font-semibold">{p.label}</div>
               <div className="mt-1 text-xs text-muted-foreground">{p.count}</div>
-              <ArrowRight className="absolute right-4 top-4 h-4 w-4 text-muted-foreground opacity-0 transition group-hover:opacity-100" />
+              <ArrowRight className="absolute right-4 top-4 h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-electric" />
             </Link>
           ))}
         </motion.div>
