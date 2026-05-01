@@ -94,6 +94,13 @@ function BuyPage() {
                 ))}
               </div>
             </div>
+
+            <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
+              <FilterSelect label="Brand" value={brand} options={brands} onChange={(v) => { setBrand(v); setModel("All"); }} />
+              <FilterSelect label="Model" value={model} options={models} onChange={setModel} />
+              <FilterSelect label="Body type" value={bodyType} options={bodyTypes} onChange={setBodyType} />
+              <FilterSelect label="Price (MMK)" value={priceRange} options={priceRanges.map((r) => r.label)} onChange={setPriceRange} />
+            </div>
           </div>
 
           <div className="grid gap-4 pb-20 sm:grid-cols-2 lg:grid-cols-4">
