@@ -20,16 +20,36 @@ export const Route = createFileRoute("/marketplace/buy")({
 function BuyPage() {
   const [query, setQuery] = useState("");
   const [city, setCity] = useState<string>("All");
+  const [brand, setBrand] = useState<string>("All");
+  const [model, setModel] = useState<string>("All");
+  const [bodyType, setBodyType] = useState<string>("All");
+  const [priceRange, setPriceRange] = useState<string>("All");
+
   const cities = ["All", ...Array.from(new Set(carListings.map((l) => l.city)))];
+  const brands = ["All", ...Array.from(new Set(carListings.map((l) => l.brand)))];
+  const models = ["All", ...Array.from(new Set(carListings.filter((l) => brand === "All" || l.brand === brand).map((l) => l.name)))];
+  const bodyTypes = ["All", ...Array.from(new Set(carListings.map((l) => l.bodyType)))];
+  const priceRanges = [
+    { label: "All", min: 0, max: Infinity },
+    { label: "< 50M", min: 0, max: 50_000_000 },
+    { label: "50M – 100M", min: 50_000_000, max: 100_000_000 },
+    { label: "100M – 200M", min: 100_000_000, max: 200_000_000 },
+    { label: "> 200M", min: 200_000_000, max: Infinity },
+  ];
 
   const filtered = useMemo(
     () =>
       carListings.filter((l) => {
         if (city !== "All" && l.city !== city) return false;
+        if (brand !== "All" && l.brand !== brand) return false;
+        if (model !== "All" && l.name !== model) return false;
+        if (bodyType !== "All" && l.bodyType !== bodyType) return false;
+        const range = priceRanges.find((r) => r.label === priceRange);
+        if (range && (l.price < range.min || l.price > range.max)) return false;
         if (query && !l.name.toLowerCase().includes(query.toLowerCase())) return false;
         return true;
       }),
-    [query, city]
+    [query, city, brand, model, bodyType, priceRange]
   );
 
   return (
@@ -74,6 +94,13 @@ function BuyPage() {
                 ))}
               </div>
             </div>
+
+            <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
+              <FilterSelect label="Brand" value={brand} options={brands} onChange={(v) => { setBrand(v); setModel("All"); }} />
+              <FilterSelect label="Model" value={model} options={models} onChange={setModel} />
+              <FilterSelect label="Body type" value={bodyType} options={bodyTypes} onChange={setBodyType} />
+              <FilterSelect label="Price (MMK)" value={priceRange} options={priceRanges.map((r) => r.label)} onChange={setPriceRange} />
+            </div>
           </div>
 
           <div className="grid gap-4 pb-20 sm:grid-cols-2 lg:grid-cols-4">
@@ -114,5 +141,22 @@ function BuyPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function FilterSelect({ label, value, options, onChange }: { label: string; value: string; options: string[]; onChange: (v: string) => void }) {
+  return (
+    <label className="flex flex-col gap-1">
+      <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">{label}</span>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="h-9 rounded-full border border-border bg-card px-3 text-xs font-medium outline-none transition focus:border-electric/50"
+      >
+        {options.map((o) => (
+          <option key={o} value={o}>{o}</option>
+        ))}
+      </select>
+    </label>
   );
 }
