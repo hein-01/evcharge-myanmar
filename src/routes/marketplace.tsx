@@ -64,21 +64,6 @@ function MarketplacePage() {
           </PreviewSection>
           )}
 
-          {/* Accessories preview */}
-          {showAccessories && (
-          <PreviewSection icon={ShoppingBag} title="Accessories & parts" subtitle="Chargers, tires, electronics & more">
-            {previewParts.map((p) => (
-              <div key={p.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:border-electric/40" style={{ boxShadow: "var(--shadow-card)" }}>
-                <div className="aspect-[4/3]" style={{ background: `linear-gradient(135deg, oklch(0.85 0.10 ${p.hue}) 0%, oklch(0.65 0.15 ${p.hue + 30}) 100%)` }} />
-                <div className="p-4">
-                  <div className="text-xs text-muted-foreground">{p.seller}</div>
-                  <div className="mt-1 font-semibold leading-snug">{p.name}</div>
-                  <div className="mt-3 font-display text-base font-bold">{p.price} <span className="text-xs font-normal text-muted-foreground">MMK</span></div>
-                </div>
-              </div>
-            ))}
-          </PreviewSection>
-          )}
 
           <div className="my-20 rounded-3xl border border-dashed border-border p-10 text-center">
             <div className="font-display text-2xl font-bold">Want to be a launch seller?</div>
